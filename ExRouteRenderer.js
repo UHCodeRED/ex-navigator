@@ -192,11 +192,11 @@ export default class ExRouteRenderer {
 
   onWillFocus(event) {
     let { data: { route } } = event;
-    if (route.onWillFocus) {
+    if (route && route.onWillFocus) {
       route.onWillFocus(event);
     }
     // The component isn't mounted yet if this is the first time it's rendered
-    if (route.scene && route.scene.componentWillFocus) {
+    if (route && route.scene && route.scene.componentWillFocus) {
       route.scene.componentWillFocus(event);
     }
 
